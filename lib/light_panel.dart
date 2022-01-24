@@ -34,14 +34,17 @@ class LightPanel extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child: Container(
-                    width: 75,
-                    height: 75,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('img/$id.png'), fit: BoxFit.fill),
+                  child: 
+                    ClipOval(
+                      child: TextButton(child: Container(
+                      width: 75,
+                      height: 75,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('img/$id.png'), fit: BoxFit.fill),
+                      )), onPressed: () => sendRequest('1'), onLongPress: () => sendRequest('0'),
+                      ),
                     ),
-                  ),
                 ),
               ),
               Padding(padding: const EdgeInsets.only(top: 8),
